@@ -126,7 +126,13 @@ MASTER_ID_FIFO
 (
     .clk_i        (clk              ),
     .rst_ni       (rst_n            ),
+`ifdef _VCP // PAK2591
+    .flush_i      (ariane_pkg::ALDEC_1B0),
+
+`else
     .flush_i      ( 1'b0            ),
+
+`endif
     .testmode_i   (test_en_i        ),
     .alm_empty_o  ( ), // open
     .alm_full_o   ( ), // open
