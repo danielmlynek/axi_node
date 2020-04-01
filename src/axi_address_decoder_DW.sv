@@ -82,13 +82,7 @@ module axi_address_decoder_DW
       .clk_i        (clk              ),
       .rst_ni       (rst_n            ),
       .testmode_i   (test_en_i        ),
-`ifdef _VCP // PAK2591
-      .flush_i      (ariane_pkg::ALDEC_1B0),
-
-`else
       .flush_i      (1'b0             ),
-
-`endif
       .alm_empty_o  ( ), // open
       .alm_full_o   ( ), // open
       .data_i       (DEST_i             ),
